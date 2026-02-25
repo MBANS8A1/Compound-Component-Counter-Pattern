@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 //1. Create the context
 const CounterContext = createContext();
 
@@ -16,5 +16,22 @@ function Counter({ children }) {
 }
 
 //3. Create child component(s) to help implement the common task of the overall compound component
+function Count() {
+  const { count } = useContext(CounterContext);
+  return <span>{count}</span>;
+}
+function Label({ children }) {
+  return <span>{children}</span>;
+}
+
+function Increase({ icon }) {
+  const { increase } = useContext(CounterContext);
+  return <button onClick={increase}>{icon}</button>;
+}
+function Decrease({ icon }) {
+  const { decrease } = useContext(CounterContext);
+  return <button onClick={decrease}>{icon}</button>;
+}
+
 //4 Add the child component(s) as properties of the parent component (this step is optional)
 export default Counter;
