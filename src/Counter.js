@@ -34,4 +34,10 @@ function Decrease({ icon }) {
 }
 
 //4 Add the child component(s) as properties of the parent component (this step is optional)
+
+Counter.Count = Count;
+Counter.Increase = Increase;
+Counter.Decrease = Decrease;
+Counter.Label = Label;
+
 export default Counter;
