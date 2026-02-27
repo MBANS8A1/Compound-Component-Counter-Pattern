@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 //1. Create the context
 const CounterContext = createContext();
 
-//2. Create the parent component
+//2. Create the parent component and supply the context to the children
 function Counter({ children }) {
   const [count, setCount] = useState(0);
   const increase = () => setCount((c) => c + 1);
